@@ -1,0 +1,200 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #1e42d3;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+#app {
+    margin: 50px auto;
+    max-width: 400px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Rounded corners */
+}
+input[type="text"], input[type="date"], select {
+    width: calc(100% - 24px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+button:hover {
+    background-color: #555; /* Darker color on hover */
+}
+#undoDeleteBtn {
+    background-color: #1e90ff; /* Blue color for undo button */
+    margin-bottom: 10px; /* Space between Undo and Clear All */
+    margin-top: 20px;
+}
+
+#clearAllBtn {
+    background-color: red;
+}
+
+#clearAllBtn:hover, #undoDeleteBtn:hover {
+    background-color: darkred; /* Hover effect for both buttons */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+ul li {
+    background-color: #eee;
+    padding: 10px;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid #1e42d3; /* Default border for tasks */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    border-radius: 4px; /* Rounded corners for tasks */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Slight shadow */
+}
+select {
+    width: 100%; /* Matches the input width */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+
+/* Task text styling */
+ul li span.task-text {
+    flex: 1;
+    font-size: 10px;
+    font-weight: normal;
+    margin-right: 15px;
+}
+
+/* Completed task styling */
+.completed {
+    text-decoration: line-through;
+    color: gray;
+    background: #d1e7ff; /* Light blue background for completed tasks */
+    font-size: 12px;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+/* Date and priority styling */
+ul li span.date {
+    font-size: 8px;
+    color: #888;
+    margin-left: 10px;
+}
+
+ul li span.priority {
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    background-color: #555;
+    padding: 6px 6px;
+    border-radius: 3px;
+    margin-right: 10px;
+    min-width: 100px; /* Set a minimum width */
+    display: inline-block; /* Ensures that the width is applied */
+    text-align: center;
+}
+
+/* Delete button styling */
+ul li button {
+    font-size: 10px;
+    font-weight: bold;
+    width: 70px;
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+ul li button:hover {
+    background-color: darkred; /* Darker red on hover */
+}
+
+/* Priority-based border colors */
+li[data-priority="important"],
+li[data-priority="semi-important"],
+li[data-priority="not-important"] {
+    border-width: 2px;
+    border-style: solid;
+}
+
+li[data-priority="important"] {
+    border-color: #e74c3c; /* Red border for important tasks */
+}
+
+li[data-priority="semi-important"] {
+    border-color: #f39c12; /* Orange border for semi-important tasks */
+}
+
+li[data-priority="not-important"] {
+    border-color: #2ecc71; /* Green border for not important tasks */
+}
+@media (max-width: 600px) {
+    #app {
+        margin: 20px; /* Reduce margin on small screens */
+        padding: 10px; /* Reduce padding on small screens */
+        width: calc(100% - 40px); /* Make the app take full width minus margins */
+    }
+
+    button {
+        font-size: 14px; /* Adjust button font size */
+    }
+
+    input[type="text"], input[type="date"], select {
+        font-size: 14px; /* Adjust input font size */
+    }
+
+    ul li {
+        font-size: 14px; /* Adjust list item font size */
+    }
+
+    ul li span.date,
+    ul li span.priority {
+        font-size: 12px; /* Adjust date and priority font size */
+    }
+
+    /* Task text styling for smaller screens */
+    ul li span.task-text {
+        font-size: 12px; /* Adjust task text font size */
+    }
+}
+
+@media (max-width: 400px) {
+    button {
+        padding: 8px; /* Adjust button padding */
+    }
+
+    input[type="text"], input[type="date"], select {
+        padding: 8px; /* Adjust input padding */
+    }
+
+    ul li {
+        padding: 8px; /* Adjust padding of list items */
+    }
+}
+
